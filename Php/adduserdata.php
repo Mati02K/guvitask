@@ -1,6 +1,6 @@
 <?php
-include_once("conn.php");
-include_once("Validate.php");
+include_once('conn.php');
+include_once('Validate.php');
 $validate = new Validate();
 
 if(isset($_POST['name']) &&
