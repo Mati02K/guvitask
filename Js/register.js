@@ -41,7 +41,7 @@ $("#dob").blur(function(){
     if(upass === ucpass)
     {
     $.ajax({
-      url:'../Php/adduserdata.php',
+      url:'http://localhost/guvi/Php/adduserdata.php',
       method:'post',
       data:{name : name,cno : cno,mail : mail,dob: dob,uname : uname,upass : upass,addr : addr},
       dataType:'text',
@@ -64,7 +64,7 @@ $("#dob").blur(function(){
         {
           $(this).unbind("submit");
           alert("User Record Added Successfully. Login to Proceed...");
-          window.location.replace("../Html/index.html");
+          window.location.replace("http://localhost/guvi/index.html");
         }
 
       }

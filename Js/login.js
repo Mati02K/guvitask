@@ -5,7 +5,7 @@ $( "#login" ).submit(function( event ) {
     var upass = $("#pass").val().trim();
 
     $.ajax({
-        url:'../Php/login.php',
+        url:'http://localhost/guvi/Php/login.php',
         method:'post',
         data:{uname : uname,upass : upass},
         dataType:'text',
@@ -22,7 +22,7 @@ $( "#login" ).submit(function( event ) {
           {
             $(this).unbind("submit");
             alert("Login Successfull. Taking you to the world of GUVI");
-            window.location.replace("../Html/profile.php");
+            window.location.replace("http://localhost/guvi/profile.php");
           }
           else
           {
