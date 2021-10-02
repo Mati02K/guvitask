@@ -5,7 +5,7 @@ $( "#login" ).submit(function( event ) {
     var upass = $("#pass").val().trim();
 
     $.ajax({
-        url:'http://localhost/guvi/Php/login.php',
+        url:'http://guvi-task-mathesh.herokuapp.com/Php/login.php',
         method:'post',
         data:{uname : uname,upass : upass},
         dataType:'text',
@@ -22,7 +22,7 @@ $( "#login" ).submit(function( event ) {
           {
             $(this).unbind("submit");
             alert("Login Successfull. Taking you to the world of GUVI");
-            window.location.replace("http://localhost/guvi/Html/profile.php");
+            window.location.replace("http://guvi-task-mathesh.herokuapp.com/Html/profile.php");
           }
           else
           {

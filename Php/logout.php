@@ -8,7 +8,7 @@ if(isset($_POST['logout']) && isset($_SESSION['u_name']))
 }
 else
 {
-    echo "<script>location.replace('http://localhost/guvi/Html/403.html')</script>;";
+    echo "<script>location.replace('http://guvi-task-mathesh.herokuapp.com/Html/403.html')</script>;";
 }
 
 ?>

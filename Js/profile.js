@@ -2,7 +2,7 @@ $("#update").click(function(){
     var phone = $("#phone").val().trim();
     var addr = $("#addr").val().trim();
     $.ajax({
-        url:'http://localhost/guvi/Php/update.php',
+        url:'http://guvi-task-mathesh.herokuapp.com/Php/update.php',
         method:'post',
         data:{phone : phone,addr : addr},
         dataType:'text',
@@ -15,7 +15,7 @@ $("#update").click(function(){
            else if(data === "0")
            {
                 alert("Ouch!!! Something went wrong. Please login again!!!");
-                window.location.replace("http://localhost/guvi/Html/index.html");
+                window.location.replace("http://guvi-task-mathesh.herokuapp.com/Html/index.html");
            }
            else if(data === "Please Fill the Form Properly")
            {
@@ -24,7 +24,7 @@ $("#update").click(function(){
            else
            {
                 alert("Wrong Request!! Session Timed Out...");
-                window.location.replace("http://localhost/guvi/Html/index.html");
+                window.location.replace("http://guvi-task-mathesh.herokuapp.com/Html/index.html");
            }
         }
     });
@@ -33,14 +33,14 @@ $("#update").click(function(){
   $("#logout").click(function(){
     var logout = "Logout";
     $.ajax({
-        url:'http://localhost/guvi/Php/logout.php',
+        url:'http://guvi-task-mathesh.herokuapp.com/Php/logout.php',
         method:'post',
         data:{logout : logout},
         dataType:'text',
         success:function(data)
         {
             alert("Logged Out!!");
-            window.location.replace("http://localhost/guvi/Html/index.html");
+            window.location.replace("http://guvi-task-mathesh.herokuapp.com/Html/index.html");
         }
     }); 
 }); 
