@@ -2,7 +2,7 @@
     session_start();
     include_once("http://guvi-task-mathesh.herokuapp.com/Php/conn.php");
     $u_name = $_SESSION['u_name'];
-    if($u_name)
+    if(isset($_SESSION['u_name']))
     {
     $stmt = $conn->prepare("SELECT * FROM user_details WHERE username = (?)");
     $stmt->bind_param('s',$u_name);
