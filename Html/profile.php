@@ -46,7 +46,7 @@
                 <div class="account-settings">
                     <div class="user-profile">
                         <div class="user-avatar">
-                            <img src="assets/guvilogo.svg" alt="GUVI LOGO">
+                            <img src="http://localhost/guvi/assets/guvilogo.svg" alt="GUVI LOGO">
                         </div>
                         <h5 class="user-name">Developed By:</h5>
                         <h6 class="user-email">Mathesh</h6>
