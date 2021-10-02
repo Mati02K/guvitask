@@ -64,7 +64,7 @@ $("#dob").blur(function(){
         {
           $(this).unbind("submit");
           alert("User Record Added Successfully. Login to Proceed...");
-          window.location.replace("http://localhost/guvi/index.html");
+          window.location.replace("http://localhost/guvi/Html/index.html");
         }
 
       }

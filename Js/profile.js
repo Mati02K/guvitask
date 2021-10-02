@@ -15,7 +15,7 @@ $("#update").click(function(){
            else if(data === "0")
            {
                 alert("Ouch!!! Something went wrong. Please login again!!!");
-                window.location.replace("http://localhost/guvi/index.html");
+                window.location.replace("http://localhost/guvi/Html/index.html");
            }
            else if(data === "Please Fill the Form Properly")
            {
@@ -24,7 +24,7 @@ $("#update").click(function(){
            else
            {
                 alert("Wrong Request!! Session Timed Out...");
-                window.location.replace("http://localhost/guvi/index.html");
+                window.location.replace("http://localhost/guvi/Html/index.html");
            }
         }
     });
@@ -40,7 +40,7 @@ $("#update").click(function(){
         success:function(data)
         {
             alert("Logged Out!!");
-            window.location.replace("http://localhost/guvi/index.html");
+            window.location.replace("http://localhost/guvi/Html/index.html");
         }
     }); 
 }); 

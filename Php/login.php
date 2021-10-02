@@ -54,6 +54,6 @@ isset($_POST['upass'])
 }
 else
 {
-    echo "<script>location.replace('http://localhost/guvi/403.html')</script>;";
+    echo "<script>location.replace('http://localhost/guvi/Html/403.html')</script>;";
 }
 ?>

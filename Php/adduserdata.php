@@ -58,6 +58,6 @@ isset($_POST['addr'])
 }
 else
 {
-    echo "<script>location.replace('../403.html')</script>;";
+    echo "<script>location.replace('http://localhost/guvi/Html/403.html')</script>;";
 }
 ?>

@@ -22,7 +22,7 @@ $( "#login" ).submit(function( event ) {
           {
             $(this).unbind("submit");
             alert("Login Successfull. Taking you to the world of GUVI");
-            window.location.replace("http://localhost/guvi/profile.php");
+            window.location.replace("http://localhost/guvi/Html/profile.php");
           }
           else
           {

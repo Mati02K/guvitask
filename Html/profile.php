@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once("Php/conn.php");
+    include_once("http://localhost/guvi/Php/conn.php");
     $u_name = $_SESSION['u_name'];
     if($u_name)
     {
