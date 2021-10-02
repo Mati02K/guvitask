@@ -35,7 +35,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="Css/profile.css">
+    <link rel="stylesheet" href="http://localhost/guvi/Css/profile.css">
 </head>
 <body>
     <div class="container">
@@ -125,9 +125,9 @@
         </div>
         </div>
         </div>
-        <script src="Js/jquery/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+        <script src="http://localhost/guvi/Js/jquery/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
-        <script src="Js/profile.js" type="text/javascript"></script>
+        <script src="http://localhost/guvi/Js/profile.js" type="text/javascript"></script>
     
 </body>
 </html>
