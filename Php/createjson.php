@@ -36,6 +36,8 @@ function get_data($conn)
         );
         array_push($userdetails,$tmpdetails);
     }
+    $stmt->close();
+    $conn->close();
     return json_encode($userdetails);
 }
 
