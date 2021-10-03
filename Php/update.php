@@ -45,6 +45,6 @@ isset($_SESSION['u_name'])
 else
 {
     echo "Invalid Request";
-    echo "<script>location.replace('http://guvi-task-mathesh.herokuapp.com/Html/403.html')</script>;";
+    echo "<script>location.replace('../Html/403.html')</script>;";
 }
 ?>

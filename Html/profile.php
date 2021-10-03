@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once('http://guvi-task-mathesh.herokuapp.com/Php/conn.php');
+    include_once('../Php/conn.php');
     $u_name = $_SESSION['u_name'];
     if(isset($_SESSION['u_name']))
     {
@@ -35,7 +35,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://guvi-task-mathesh.herokuapp.com/Css/profile.css">
+    <link rel="stylesheet" href="../Css/profile.css">
 </head>
 <body>
     <div class="container">
@@ -46,7 +46,7 @@
                 <div class="account-settings">
                     <div class="user-profile">
                         <div class="user-avatar">
-                            <img src="http://guvi-task-mathesh.herokuapp.com/assets/guvilogo.svg" alt="GUVI LOGO">
+                            <img src="../assets/guvilogo.svg" alt="GUVI LOGO">
                         </div>
                         <h5 class="user-name">Developed By:</h5>
                         <h6 class="user-email">Mathesh</h6>
@@ -125,9 +125,9 @@
         </div>
         </div>
         </div>
-        <script src="http://guvi-task-mathesh.herokuapp.com/Js/jquery/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+        <script src="../Js/jquery/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
-        <script src="http://guvi-task-mathesh.herokuapp.com/Js/profile.js" type="text/javascript"></script>
+        <script src="../Js/profile.js" type="text/javascript"></script>
     
 </body>
 </html>
