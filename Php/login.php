@@ -19,7 +19,7 @@ isset($_POST['upass'])
     
     $upass = base64_encode($upass);
         
-    $stmt = $conn->prepare("SELECT username,userpass FROM user_details WHERE `username`=? AND `userpass`=?");
+    $stmt = $conn->prepare("SELECT username,userpass,u_token FROM user_details WHERE `username`=? AND `userpass`=?");
 
     $stmt->bind_param('ss',$uname,$upass);
 
@@ -31,15 +31,22 @@ isset($_POST['upass'])
 
     $runame = $row['username'];
     $rupass = $row['userpass'];
+    $token = $row['u_token'];
 
     if($runame == $uname && $rupass == $upass) 
     {
-        $_SESSION['u_name'] = $runame;
-        echo "1";
+        $statusdetails = array(
+            'status' => "1",
+            'token' => $token
+        );
+        echo json_encode($statusdetails);
     }
     else
     {
-        echo "0";  
+        $statusdetails = array(
+            'status' => "0"
+        );
+        echo json_encode($statusdetails);    
     }
 
     $stmt->close();
@@ -48,7 +55,10 @@ isset($_POST['upass'])
     }
     else
     {
-        echo "Please Fill the Form Properly";
+        $statusdetails = array(
+            'status' => "Please Fill the Form Properly"
+        );
+        echo json_encode($statusdetails);  
     }
 
 }

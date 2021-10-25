@@ -1,29 +1,3 @@
-<?php
-    session_start();
-    include_once('../Php/conn.php');
-    $u_name = $_SESSION['u_name'];
-    if(isset($_SESSION['u_name']))
-    {
-    $stmt = $conn->prepare("SELECT * FROM user_details WHERE username = (?)");
-    $stmt->bind_param('s',$u_name);
-    $stmt->execute();
-
-    $result = $stmt->get_result();
-
-    $row = $result->fetch_array(MYSQLI_ASSOC);
-    
-    $user_id = $row['user_id'];
-    $name = $row['u_name'];
-    $u_email = $row['u_email'];
-    $u_cno = $row['u_cno'];
-    $u_dob = $row['u_dob'];
-    $u_addr = $row['u_addr'];
-    $runame = $row['username'];
-    
-    $stmt->close();
-    $conn->close();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,37 +45,37 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                         <div class="form-group">
                             <label for="ID">User ID</label>
-                            <input type="text" class="form-control" value="<?php echo $user_id; ?>" readonly> 
+                            <input type="text" class="form-control" id="userid" value="" readonly> 
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                         <div class="form-group">
                             <label for="fullName">Name</label>
-                            <input type="text" class="form-control" value="<?php echo $name; ?>" readonly> 
+                            <input type="text" class="form-control" id="name" value="" readonly> 
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                         <div class="form-group">
                             <label for="Uname">UserName</label>
-                            <input type="email" class="form-control" value="<?php echo $u_name; ?>" readonly>
+                            <input type="email" class="form-control" id="username" value="" readonly>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" value="<?php echo $u_email; ?>" readonly> 
+                            <input type="text" class="form-control" id="useremail" value="" readonly> 
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                         <div class="form-group">
                             <label for="phone">Contact No</label>
-                            <input type="text" class="form-control" id="phone" pattern="[0-9]{10}" value="<?php echo $u_cno; ?>">
+                            <input type="text" class="form-control" id="phone" pattern="[0-9]{10}" value="">
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                         <div class="form-group">
                             <label for="DOB">Date Of Birth</label>
-                            <input type="url" class="form-control" value="<?php echo $u_dob; ?>" readonly>
+                            <input type="url" class="form-control" id="dob" value="" readonly>
                         </div>
                     </div>
         
@@ -109,7 +83,6 @@
                         <div class="form-group">
                             <label for="Address">Your Address</label>
                             <textarea class="form-control" minlength="10" maxlength="200" id="addr">
-                            <?php echo $u_addr; ?>
                             </textarea>
                         </div>
                     </div>
@@ -131,10 +104,3 @@
     
 </body>
 </html>
-<?php
-    }
-    else
-    {
-        echo"<script>location.replace('403.html')</script>";
-    }
-?>

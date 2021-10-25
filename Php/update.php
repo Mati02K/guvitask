@@ -1,12 +1,11 @@
 <?php
-session_start();
 include_once("conn.php");
 include_once("Validate.php");
 $validate = new Validate();
 
 if(isset($_POST['phone']) &&
 isset($_POST['addr'])  && 
-isset($_SESSION['u_name'])
+isset($_POST['uname'])
 )
 {
     $phone =  $validate->sanitizeInput($conn,$_POST['phone']);
@@ -15,7 +14,7 @@ isset($_SESSION['u_name'])
     $phonecheck =  $validate->stringValidate($phone,10,10);
     $addrcheck =  $validate->stringValidate($addr,10,200);
 
-    $u_name = $_SESSION['u_name'];
+    $u_name = $_POST['uname'];
 
     if($phonecheck && $addrcheck)
     {
@@ -29,8 +28,7 @@ isset($_SESSION['u_name'])
         else
         {
             echo "0";
-            session_unset(); 
-            session_destroy();
+
         }
         $stmt->close();
         $conn->close();

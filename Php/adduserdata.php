@@ -33,10 +33,11 @@ isset($_POST['addr'])
     {
 
         $upass = base64_encode($upass);
+        $token = base64_encode($mail);
 
-        $stmt = $conn->prepare("INSERT INTO user_details (u_name, u_cno, u_email, u_dob, u_addr, username, userpass) 
-        VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssss", $name, $cno, $mail, $dob, $addr, $uname, $upass);
+        $stmt = $conn->prepare("INSERT INTO user_details (u_name, u_cno, u_email, u_dob, u_addr, username, userpass, u_token) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssss", $name, $cno, $mail, $dob, $addr, $uname, $upass, $token);
 
 
         if($stmt->execute()) 

@@ -1,10 +1,53 @@
+$( document ).ready(function() {
+    
+const token = localStorage.getItem('token');
+
+if(token)
+{
+    console.log('Correct Login');
+}
+else
+{
+    location.replace("../Html/403.html");
+}
+});
+
+// Get User Data
+$.ajax({
+    url: "../Php/profile.php",
+    type: 'POST',
+    data:{token:localStorage.getItem("token")},
+    dataType: 'text', 
+    success: function(data) {
+        const obj = JSON.parse(data);
+        if(obj.status === "1")
+        {
+            $("#userid").val(obj.userid);
+            $("#name").val(obj.name);
+            $("#username").val(obj.uname);
+            $("#useremail").val(obj.email);
+            $("#phone").val(obj.cno);
+            $("#dob").val(obj.dob);
+            $("#addr").val(obj.addr);
+        }
+        else
+        {
+            location.replace("../Html/403.html");
+        }
+
+    }
+});
+
+
+
 $("#update").click(function(){
     var phone = $("#phone").val().trim();
     var addr = $("#addr").val().trim();
+    var username = $("#username").val().trim();
     $.ajax({
         url:'../Php/update.php',
         method:'post',
-        data:{phone : phone,addr : addr},
+        data:{phone : phone,addr : addr,uname : username},
         dataType:'text',
         success:function(data)
         {
@@ -12,18 +55,9 @@ $("#update").click(function(){
            {
                alert("Data has been Successfully Updated");
            }
-           else if(data === "0")
-           {
-                alert("Ouch!!! Something went wrong. Please login again!!!");
-                window.location.replace("../Html/index.html");
-           }
-           else if(data === "Please Fill the Form Properly")
-           {
-              alert("Please Fill the Form Properly");
-           }
            else
            {
-                alert("Wrong Request!! Session Timed Out...");
+                alert("Wrong Request!! Login Again..");
                 window.location.replace("../Html/index.html");
            }
         }
@@ -31,16 +65,6 @@ $("#update").click(function(){
   }); 
 
   $("#logout").click(function(){
-    var logout = "Logout";
-    $.ajax({
-        url:'../Php/logout.php',
-        method:'post',
-        data:{logout : logout},
-        dataType:'text',
-        success:function(data)
-        {
-            alert("Logged Out!!");
-            window.location.replace("../Html/index.html");
-        }
-    }); 
+    localStorage.removeItem("token");
+    location.replace("../Html/index.html");
 }); 

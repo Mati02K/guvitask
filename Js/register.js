@@ -63,7 +63,6 @@ $("#dob").blur(function(){
         else
         {
           $(this).unbind("submit");
-          alert("User Record Added Successfully. Login to Proceed...");
           window.location.replace("../Html/index.html");
         }
 

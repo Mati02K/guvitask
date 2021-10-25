@@ -11,26 +11,24 @@ $( "#login" ).submit(function( event ) {
         dataType:'text',
         success:function(data)
         {
-          if(data === "Please Fill the Form Properly")
+          try 
           {
-            $("html, body").animate({scrollTop: 0}, 250);   
-            $("#error").css("visibility", "visible");
-            $("#error").text('Some of the Details you entered are not in correct format. Please match the requested format !!!');
-  
-          }
-          else if(data === "1")
+            const obj = JSON.parse(data);
+            if(obj.status === "1")
+            {
+              $(this).unbind("submit");
+              localStorage.setItem("token", obj.token);
+              window.location.replace("../Html/profile.html");
+            }
+          } 
+          catch (e) 
           {
-            $(this).unbind("submit");
-            alert("Login Successfull. Taking you to the world of GUVI");
-            window.location.replace("../Html/profile.php");
-          }
-          else
-          {
+            
             $("html, body").animate({scrollTop: 0}, 250);   
             $("#error").css("visibility", "visible");
             $("#error").text('Please Enter Proper Credentials');
+          
           }
-  
         }
         
     });
