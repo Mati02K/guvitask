@@ -1,6 +1,8 @@
 <?php
 include_once("conn.php");
 include_once("Validate.php");
+require './vendor/autoload.php';
+
 $validate = new Validate();
 
 if(isset($_POST['phone']) &&
@@ -23,6 +25,9 @@ isset($_POST['uname'])
         $stmt->bind_param('sss',$phone,$addr,$u_name);
         if($stmt->execute())
         {
+            $redis = new Predis\Client();
+            $redis->set("cno",$phone);
+            $redis->set("addr",$addr);
             echo "1";
         }
         else
